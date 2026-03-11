@@ -1,2 +1,50 @@
-# Google App Engine generated folder
-appengine-generated/
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/Debug/
+x64/Release/
+build/
+
+# Visual C++ compiled output
+*.exe
+*.dll
+*.lib
+*.obj
+*.pch
+
+# Visual Studio Code
+.vscode/
+
+# vcpkg installed artifacts (don't commit)
+vcpkg_installed/
+vcpkg/installed/
+vcpkg/packages/
+vcpkg/buildtrees/
+vcpkg/archives/
+vcpkg/downloads/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeScripts/
+Makefile
+install_manifest.txt
+/*.dir
+
+# temporary
+*.log
+*.cache
+
+# OS
+Thumbs.db
+.DS_Store
