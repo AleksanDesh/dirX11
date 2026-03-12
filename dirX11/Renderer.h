@@ -4,6 +4,7 @@
 #include <dxgi1_2.h>
 #include <wrl/client.h>
 #include <SDL2/SDL_video.h>
+#include <d3dcompiler.h>
 using namespace Microsoft::WRL;
 
 
@@ -12,9 +13,13 @@ class Renderer
 public: 
 	Renderer(SDL_Window* window, int frameBufferWidth, int frameBufferHeight);
 
+	ComPtr<ID3D11Device> GetDevice() const { return device; }
+	ComPtr<ID3D11DeviceContext> GetContext() const { return context; }
+
+
 	void BeginRenderPass();
 	void EndRenderPass();
-
+	 
 private: 
 	SDL_Window* window;
 	int frameBufferWidth, frameBufferHeight;

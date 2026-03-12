@@ -5,9 +5,11 @@
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
 #include "Renderer.h"
+#include "TriangleTest.h"
 
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
 
 
 int main()
@@ -24,6 +26,8 @@ int main()
     }
     
     Renderer renderer(window, 800, 600);
+    TriangleTest triangleTest(renderer);
+
 
     bool running = true;
     SDL_Event event;
@@ -33,9 +37,9 @@ int main()
                 running = false;
             }
         }
-
         //SDL_Delay(16); // Simulates a frame delay (it says around 60 fps?)
         renderer.BeginRenderPass();
+        triangleTest.Render();
         renderer.EndRenderPass();
     }
     SDL_DestroyWindow(window);

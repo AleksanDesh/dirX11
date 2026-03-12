@@ -126,15 +126,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlobUtil.cpp" />
     <ClCompile Include="dirX11.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="ShaderUtil.cpp" />
+    <ClCompile Include="TriangleTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vcpkg-configuration.json" />
     <None Include="vcpkg.json" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlobUtil.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="ShaderUtil.h" />
+    <ClInclude Include="TriangleTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

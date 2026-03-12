@@ -14,13 +14,16 @@ void Renderer::BeginRenderPass() {
     const float clearColor[4] = { 1, 0, 0, 0 }; // RED
     context->ClearRenderTargetView(renderTargetView.Get(), clearColor);
 
+    const CD3D11_VIEWPORT viewport(0.0f, 0.0f, frameBufferWidth, frameBufferHeight);
+    context->RSSetViewports(1, &viewport);
+
     ID3D11RenderTargetView* renderTargets[] = { renderTargetView.Get() };
     context->OMSetRenderTargets(1, renderTargets, nullptr); // render to this buffer
 }
 
 // Display it
 void Renderer::EndRenderPass() {
-    swapChain->Present(1, 0); // Present with vsync (first number 1 for vsync)
+    swapChain->Present(0, 0); // Present with vsync (first number 1 for vsync)
 }
 
 void Renderer::CreateDeviceAndContext() {
